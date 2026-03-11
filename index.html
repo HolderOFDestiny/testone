@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#8709;</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--fg:#0f0;--dim:#1a3d1a;--mid:#2a7a2a;--acc:#ff0;--red:#c00;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--fg);font-family:'Share Tech Mono',monospace;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;}
+.stage{display:none;flex-direction:column;align-items:center;text-align:center;max-width:540px;width:100%;gap:.9rem;}
+.stage.active{display:flex;}
+.tag{font-size:.6rem;color:var(--dim);letter-spacing:.5em;text-transform:uppercase;}
+.box{font-size:.63rem;color:var(--dim);line-height:1.9;letter-spacing:.07em;border:1px solid #0c1f0c;padding:.9rem 1.1rem;width:100%;text-align:left;font-family:'Share Tech Mono',monospace;background:#000;}
+.box .h{color:var(--fg);}
+.box .a{color:var(--acc);}
+.box .s{color:#0c1f0c;display:block;}
+.pips{display:flex;gap:.3rem;margin-bottom:.3rem;}
+.pip{width:16px;height:2px;background:var(--dim);}
+.pip.on{background:var(--fg);}
+.pip.cur{background:var(--acc);}
+input{background:transparent;border:none;border-bottom:1px solid var(--mid);color:var(--fg);font-size:1rem;padding:.4rem .6rem;text-align:center;outline:none;width:210px;font-family:'Share Tech Mono',monospace;letter-spacing:.2em;}
+input:focus{border-color:var(--fg);}
+input::placeholder{color:var(--dim);font-size:.75rem;letter-spacing:.05em;}
+button{background:transparent;border:1px solid var(--dim);color:var(--dim);padding:.45rem 2rem;cursor:pointer;font-family:'Share Tech Mono',monospace;letter-spacing:.2em;font-size:.72rem;text-transform:uppercase;transition:border-color .2s,color .2s;}
+button:hover{border-color:var(--fg);color:var(--fg);}
+.err{color:var(--red);font-size:.65rem;letter-spacing:.3em;height:.8em;opacity:0;transition:opacity .12s;text-transform:uppercase;}
+.err.show{opacity:1;}
+#certA,#certB{display:none;flex-direction:column;align-items:center;gap:.9rem;padding:1.8rem;text-align:center;}
+.ct{font-family:'Cinzel',serif;color:var(--acc);letter-spacing:.3em;font-size:1.2rem;}
+.cn{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:900;background:linear-gradient(90deg,#996600,#ffe066,#fff,#ffe066,#996600);background-size:300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:sh 4s linear infinite;}
+@keyframes sh{0%{background-position:200% center;}100%{background-position:-200% center;}}
+.cb{font-size:.6rem;color:var(--dim);letter-spacing:.2em;line-height:2.2;text-transform:uppercase;}
+.cr{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--acc),transparent);}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stages">
+
+    <div class="stage active" id="stage1">
+      <div class="tag">&#9632; 01 / 08</div>
+      <div class="pips" id="p1"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212; ELECTROMAGNETIC SPECTRUM &#8212;&#8212;</span>
+        BAND &nbsp;&nbsp;: <span class="h">430&#8211;770 THz</span><br>
+        RANGE &nbsp;: <span class="h">390&#8211;700 nm</span><br>
+        ENERGY : <span class="h">1.77&#8211;3.18 eV</span><br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        PHENOMENON AT THIS FREQUENCY &rarr; <span class="a">?</span>
+      </div>
+      <input id="s1" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check1()">
+      <button onclick="check1()">submit</button>
+      <div class="err" id="e1">&#9644; denied</div>
+    </div>
+
+    <div class="stage" id="stage2">
+      <div class="tag">&#9632; 02 / 08</div>
+      <div class="pips" id="p2"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212;&#8212;&#8212; NULL SPACE TOPOLOGY &#8212;&#8212;&#8212;&#8212;</span>
+        &#8709; &#8834; V &nbsp; | &nbsp; dim(&#8709;) = 0 &nbsp; | &nbsp; V &#8745; &#8709; = &#8709;<br>
+        CARDINALITY : <span class="h">&#8501;&#8320;</span><br>
+        MEASURE &nbsp;&nbsp;&nbsp;: <span class="h">&#956;(&#8709;) = 0</span><br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        NAME FOR THE EMPTY MEDIUM &rarr; <span class="a">?</span>
+      </div>
+      <input id="s2" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check2()">
+      <button onclick="check2()">submit</button>
+      <div class="err" id="e2">&#9644; denied</div>
+    </div>
+
+    <div class="stage" id="stage3">
+      <div class="tag">&#9632; 03 / 08</div>
+      <div class="pips" id="p3"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212;&#8212;&#8212; VIGEN&Egrave;RE INTERCEPT &#8212;&#8212;&#8212;&#8212;</span>
+        KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="h">DELTA</span><br>
+        IC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span class="h">0.0385</span><br>
+        CIPHERTEXT : <span class="a">F M A A E U</span><br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        DECRYPT &rarr; NAME CLASS OF THIS SYSTEM
+      </div>
+      <input id="s3" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check3()">
+      <button onclick="check3()">submit</button>
+      <div class="err" id="e3">&#9644; denied</div>
+    </div>
+
+    <div class="stage" id="stage4">
+      <div class="tag">&#9632; 04 / 08</div>
+      <div class="pips" id="p4"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212;&#8212;&#8212; TRANSPOSITION SCHEMA &#8212;&#8212;&#8212;&#8212;</span>
+        COLUMNS : <span class="h">4</span> &nbsp; ROWS : <span class="h">3</span><br>
+        ORDER &nbsp;&nbsp;: <span class="h">4&#8211;3&#8211;2&#8211;1 &rarr; 1&#8211;2&#8211;3&#8211;4</span><br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        &#9632;&#9632;&#9632;&#9632; / &#9632;&#9632;&#9632;&#9632; / &#9632;&#9632;&#9632;&#9632;<br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        NAME THE STRUCTURE ABOVE &rarr; <span class="a">?</span>
+      </div>
+      <input id="s4" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check4()">
+      <button onclick="check4()">submit</button>
+      <div class="err" id="e4">&#9644; denied</div>
+    </div>
+
+    <div class="stage" id="stage5">
+      <div class="tag">&#9632; 05 / 08</div>
+      <div class="pips" id="p5"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212; PLAYFAIR MATRIX &#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        KEY : <span class="h">MONARCH</span><br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        &nbsp;&nbsp;<span class="h">M O N A R</span><br>
+        &nbsp;&nbsp;<span class="h">C H B D E</span><br>
+        &nbsp;&nbsp;<span class="h">F G I K L</span><br>
+        &nbsp;&nbsp;<span class="h">P Q S T U</span><br>
+        &nbsp;&nbsp;<span class="h">V W X Y Z</span><br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        CIPHERTEXT : <span class="a">DY &#8211; YD &#8211; DF</span>
+      </div>
+      <input id="s5" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check5()">
+      <button onclick="check5()">submit</button>
+      <div class="err" id="e5">&#9644; denied</div>
+    </div>
+
+    <div class="stage" id="stage6">
+      <div class="tag">&#9632; 06 / 08</div>
+      <div class="pips" id="p6"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; ADFGVX &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;A &nbsp;D &nbsp;F &nbsp;G &nbsp;V &nbsp;X<br>
+        <span class="h">A</span> [ N &nbsp;A &nbsp;1 &nbsp;C &nbsp;3 &nbsp;H ]<br>
+        <span class="h">D</span> [ 8 &nbsp;T &nbsp;B &nbsp;O &nbsp;F &nbsp;R ]<br>
+        <span class="h">F</span> [ S &nbsp;P &nbsp;<span class="a">D</span> &nbsp;4 &nbsp;2 &nbsp;9 ]<br>
+        <span class="h">G</span> [ 7 &nbsp;Y &nbsp;V &nbsp;I &nbsp;6 &nbsp;<span class="a">E</span>]<br>
+        <span class="h">V</span> [ 0 &nbsp;W &nbsp;5 &nbsp;G &nbsp;Q &nbsp;U ]<br>
+        <span class="h">X</span> [ J &nbsp;K &nbsp;L &nbsp;M &nbsp;Z &nbsp;X ]<br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        MSG : <span class="a">FF GX AG DG FF GX</span>
+      </div>
+      <input id="s6" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check6()">
+      <button onclick="check6()">submit</button>
+      <div class="err" id="e6">&#9644; denied</div>
+    </div>
+
+    <div class="stage" id="stage7">
+      <div class="tag">&#9632; 07 / 08</div>
+      <div class="pips" id="p7"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212;&#8212;&#8212; PRIME-INDEXED REGISTER &#8212;&#8212;&#8212;&#8212;</span>
+        SEQUENCE : <span class="h">2&rarr;3&rarr;5&rarr;7&rarr;11&rarr;13</span><br>
+        SUM : <span class="h">41</span> &nbsp; MOD 97 : <span class="h">41</span><br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        <span class="a">2&times;10&sup3; + 0&times;10&sup2; + 2&times;10 + 4</span><br>
+        EVALUATE &rarr; NUMERIC ANSWER
+      </div>
+      <input id="s7" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check7()">
+      <button onclick="check7()">submit</button>
+      <div class="err" id="e7">&#9644; denied</div>
+    </div>
+
+    <div class="stage" id="stage8">
+      <div class="tag">&#9632; 08 / 08</div>
+      <div class="pips" id="p8"></div>
+      <div class="box">
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; BACON CIPHER &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        A=AAAAA &nbsp; B=AAAAB &nbsp; READ 5-BIT<br>
+        <span class="s">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</span>
+        <span class="a">BAABA BAAAA BAABB BAABA AABBB</span><br>
+        DECODE TO PLAINTEXT
+      </div>
+      <input id="s8" placeholder="response" autocomplete="off" onkeydown="if(event.key==='Enter')check8()">
+      <button onclick="check8()">submit</button>
+      <div class="err" id="e8">&#9644; denied</div>
+    </div>
+
+  </div>
+
+  <div id="certA">
+    <div class="tag">&#9632; &#9632; &#9632; &#9632;</div>
+    <div class="ct">Certificate of Completion</div>
+    <div class="cr"></div>
+    <div class="cn">OPERATIVE</div>
+    <div class="cb">protocols 01&#8211;04 decoded<br>clearance : intermediate</div>
+    <div class="cr"></div>
+    <div class="tag">continue &darr; 05&#8211;08</div>
+  </div>
+
+  <div id="certB">
+    <div class="tag">&#9632; &#9632; &#9632; &#9632; &#9632; &#9632; &#9632; &#9632;</div>
+    <div class="ct">Grandmaster Certificate</div>
+    <div class="cr"></div>
+    <div class="cn">OPERATIVE</div>
+    <div class="cb">all eight protocols decoded<br>clearance : maximum<br>rank : grandmaster</div>
+    <div class="cr"></div>
+    <div class="tag">&#9632; access granted &#9632;</div>
+  </div>
+</div>
+<script>
+(function(){
+var _τ=[74,83,47,19,22,13,64,91,38,17,52,88,61,27,45,79,93,31,16,70,44,11,67,84,53,29,76,42,55,14,68,90,23,81,37,65,48,33,77,50,25,87,62,19,43,71,85,30,59,12,46,78,21,94,36,60,18,73,41,86,57,24,95,8];
+var _meta=[0xAA^0xBB,0xF0^0xF5,0x3F^0x01];
+var _Φ={q1:"12E2FFCDC6",q2:"EBC5DEA0",q3:"DFA0A68B958F",q4:"BC9A9C66",q5:"9B7360404D50",q6:"7D43502F293F",q7:"0A75606B",q8:"2316040AE3"};
+
+var _jH=function(s){var h=0x811C9DC5;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,0x01000193)>>>0;}return h;};
+var _jR=function(a,b,c){return(Math.imul(a,0x9E3779B9)>>>0)^(b*0x6C62272E)>>>0^(c&0xFF);};
+var _jSbox=[0x63,0x7c,0x77,0x7b,0xf2,0x6b,0x6f,0xc5,0x30,0x01,0x67,0x2b,0xfe,0xd7,0xab,0x76,0xca,0x82,0xc9,0x7d,0xfa,0x59,0x47,0xf0,0xad,0xd4,0xa2,0xaf,0x9c,0xa4,0x72,0xc0];
+var _jPrng=function(seed,n){var s=seed,r=[];for(var i=0;i<n;i++){s=(_jR(s,i,0x5A)^(s>>>16))>>>0;r.push(s&0xFF);}return r;};
+var _jPool=_jPrng(0xDEADBEEF,128);
+var _jLFSR=function(init,taps,n){var reg=init,out=[];for(var i=0;i<n;i++){var bit=0;for(var t=0;t<taps.length;t++){bit^=(reg>>taps[t])&1;}out.push(reg&1);reg=(reg>>>1)|((bit&1)<<taps[taps.length-1]);}return out;};
+var _jSub=_jLFSR(0xACE1,[15,13,12,10],64);
+var _jGF=function(a,b){var p=0;for(var i=0;i<8;i++){if(b&1)p^=a;a=(a<<1)^((a&0x80)?0x1B:0);b>>=1;}return p&0xFF;};
+var _jFei=function(L,R,rounds){for(var i=0;i<rounds;i++){var t=R;R=L^_jGF(R,_jSbox[i%_jSbox.length]);L=t;}return[L,R];};
+var _jState={v:_jPrng(0xCAFEBABE,4),tick:function(){this.v=this.v.map(function(x,i){return(_jR(x,i,_jPool[i*3%128])^_jSub[i*7%64])&0xFF;});}};
+var _jMix=function(blk){return blk.map(function(b,i){return(_jGF(b,_jSbox[i%_jSbox.length])^_jPool[(i*17+3)%128])&0xFF;});};
+var _jNoop=(function(){var x=0;for(var i=0;i<16;i++){x+=_jGF(_jPool[i],_jSub[i%64])^_jFei(i,i^3,2)[0];}return x&0xFF;})();
+
+var _Δ=function(h){var r=[];for(var i=0;i<h.length;i+=2){r.push(parseInt(h.substr(i,2),16));}return r;};
+var _Λ=function(n,l){var r=[];for(var i=0;i<l;i++){r.push((n*_τ[_meta[0]]+i*_τ[_meta[1]]+_τ[_meta[2]])%256);}return r;};
+var _Ψ=function(n,v,h){_jState.tick();var e=_Δ(h),k=_Λ(n,e.length);if(v.length!==e.length)return false;for(var i=0;i<e.length;i++){if((e[i]^k[i])!==v.charCodeAt(i))return false;}return true;};
+var _nrm=function(s){return s.toLowerCase().replace(/[^a-z0-9]/g,"");};
+
+var _initPips=function(){for(var s=1;s<=8;s++){var el=document.getElementById("p"+s);if(!el)continue;for(var p=1;p<=8;p++){var d=document.createElement("div");d.className="pip"+(p<s?" on":p===s?" cur":"");el.appendChild(d);}}};
+_initPips();
+
+var _err=function(n){var el=document.getElementById("e"+n);if(!el)return;el.classList.add("show");setTimeout(function(){el.classList.remove("show");},1400);};
+var _next=function(s){var cur=document.getElementById("stage"+s);if(cur)cur.classList.remove("active");var nx=document.getElementById("stage"+(s+1));if(nx){setTimeout(function(){nx.classList.add("active");},60);}};
+
+window.check1=function(){var v=_nrm(document.getElementById("s1").value);if(_Ψ(1,v,_Φ.q1)){_next(1);}else{_err(1);}};
+window.check2=function(){var v=_nrm(document.getElementById("s2").value);if(_Ψ(2,v,_Φ.q2)){_next(2);}else{_err(2);}};
+window.check3=function(){var v=_nrm(document.getElementById("s3").value);if(_Ψ(3,v,_Φ.q3)){_next(3);}else{_err(3);}};
+window.check4=function(){var v=_nrm(document.getElementById("s4").value);if(_Ψ(4,v,_Φ.q4)){
+  document.getElementById("stage4").classList.remove("active");
+  document.getElementById("certA").style.display="flex";
+  setTimeout(function(){document.getElementById("stage5").classList.add("active");},700);
+}else{_err(4);}};
+window.check5=function(){var v=_nrm(document.getElementById("s5").value);if(_Ψ(5,v,_Φ.q5)){_next(5);}else{_err(5);}};
+window.check6=function(){var v=_nrm(document.getElementById("s6").value);if(_Ψ(6,v,_Φ.q6)){_next(6);}else{_err(6);}};
+window.check7=function(){var v=_nrm(document.getElementById("s7").value);if(_Ψ(7,v,_Φ.q7)){_next(7);}else{_err(7);}};
+window.check8=function(){var v=_nrm(document.getElementById("s8").value);if(_Ψ(8,v,_Φ.q8)){
+  document.getElementById("stage8").classList.remove("active");
+  document.getElementById("certB").style.display="flex";
+}else{_err(8);}};
+
+var _jDummy=_jMix(_jPool.slice(0,8));
+var _jDet=_jDummy[0]*_jDummy[3]-_jDummy[1]*_jDummy[2];
+var _jRot=_jDummy.slice(_jDet&7).concat(_jDummy.slice(0,_jDet&7));
+var _jChk=_jH(String(_jNoop^_jRot[0]));
+_jState.tick();
+})();
+</script>
+</body>
+</html>
